@@ -92,7 +92,7 @@ class RestfulVillageMetadataResource extends RestfulEntityBaseNode {
   }
 
   public static function location($wrapper) {
-    $loc = $wrapper->field_media_location->value();
+    $loc = $wrapper->field_village_location->value();
     if (empty($loc)) {
       return array();
     }
