@@ -89,4 +89,12 @@ class RestfulImageMetadataResource extends RestfulEntityBaseNode {
     $src = 'https://www.google.com/maps/embed/v1/streetview?' . implode('&', $params);
     return $src;
   }
+
+  public static function location($wrapper) {
+    $loc = $wrapper->field_media_location->value();
+    if (empty($loc)) {
+      return array();
+    }
+    return 'test'; //array('lat' => $loc['lat'], 'lon' => $loc['lon']);
+  }
 }
