@@ -65,17 +65,6 @@ class RestfulImageMetadataResource extends RestfulEntityBaseNode {
     if (empty($loc)) {
       return array();
     }
-    $result = array(
-      'lat' => $loc['lat'],
-      'lon' => $loc['lon'],
-      );
-    $bearing = $wrapper->field_view_angle->value();
-    if (empty($bearing)) {
-      $bearing = 0;
-    }
-    else {
-      $result['bearing'] = $bearing;
-    }
 // <iframe
 //   width="450"
 //   height="250"
