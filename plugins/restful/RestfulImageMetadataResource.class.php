@@ -25,10 +25,6 @@ class RestfulImageMetadataResource extends RestfulEntityBaseNode {
     );
 
     $public_fields['location'] = array(
-      //'property' => 'field_media_location',
-      //'sub_property' => 'geom',
-      //'sub_property' => 'lat',
-      // 'sub_property' => 'lon',
       'callback' => 'static::location',
     );
 
