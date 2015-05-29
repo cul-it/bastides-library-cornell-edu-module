@@ -98,6 +98,6 @@ class RestfulImageMetadataResource extends RestfulEntityBaseNode {
     if (empty($loc)) {
       return array();
     }
-    return array('lat' => $loc['lat'], 'lon' => $loc['lon']);
+    return array('lat' => $loc['lat'], 'lon' => $loc['lon'], 'latlon' => array($loc['lat'],$loc['lon']));
   }
 }
