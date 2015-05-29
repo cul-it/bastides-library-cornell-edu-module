@@ -41,8 +41,7 @@ class RestfulVillageMetadataResource extends RestfulEntityBaseNode {
     );
 
     $public_fields['location'] = array(
-      'property' => 'field_village_location',
-      'sub_property' => 'geom',
+      'callback' => 'static::location',
     );
 
     $public_fields['photo_years'] = array(
@@ -90,6 +89,14 @@ class RestfulVillageMetadataResource extends RestfulEntityBaseNode {
     }
 
    return $years;
+  }
+
+  public static function location($wrapper) {
+    $loc = $wrapper->field_media_location->value();
+    if (empty($loc)) {
+      return array();
+    }
+    return array('lat' => $loc['lat'], 'lon' => $loc['lon'], 'latlon' => array($loc['lat'],$loc['lon']));
   }
 
 }
